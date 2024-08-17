@@ -2,9 +2,9 @@ const HeaderStatic = () => {
   return (
     <div
       id="header-static"
-      className=" h-[calc(100vh-59px)] w-full  flex xs:flex-col-reverse xs:top-[70px] md:top-[56px] xs:px-10 lg:px-0 md:flex-row justify-center items-center md:space-x-10 lg:space-x-24 xs:gap-10 md:gap-0 z-[0] "
+      className=" h-[100vh] bg-white  w-full  flex xs:flex-col-reverse xs:top-[70px] md:top-[56px] xs:px-10 lg:px-0 md:flex-row justify-center items-center md:space-x-10 lg:space-x-24 xs:gap-10 md:gap-0 z-[0] "
     >
-      <div className=" xs:w-full md:w-2/5 xs:h-fit md:h-[110%] flex items-center justify-center lg:bg-vector bg-left bg-no-repeat lg:bg-contain xl:bg-cover  sm:bg-none ">
+      <div className=" xs:w-full md:w-2/5 xs:h-fit md:h-[110%] flex items-center justify-center lg:bg-vector bg-left bg-no-repeat lg:bg-contain xl:bg-contain  sm:bg-none ">
         <div className="h-[450px] aspect-square xs:h-[250px] sm:h-[500px] md:h-[300px] lg:h-[400px] object-cover rotate-plate ">
           <img
             src="/plate.png"
@@ -42,9 +42,12 @@ const HeaderStatic = () => {
               </button>
             </div>
             <div className="  border-2 border-[#ffc554] flex justify-center items-center rounded-[.375rem] text-[#ffc554] hover:text-[#4D5969] hover:bg-[#FFB82E] cursor-pointer transition duration-300 ease-linear z-20">
-              <button className="outline-none px-[3rem] py-[0.3125rem] font-bold flex space-x-2">
-                <span className="hidden lg:flex">OUR</span> <div>LOCATION</div>
-              </button>
+              <a href="#location">
+                <button className="outline-none px-[3rem] py-[0.3125rem] font-bold flex space-x-2">
+                  <span className="hidden lg:flex">OUR</span>{" "}
+                  <div>LOCATION</div>
+                </button>
+              </a>
             </div>
           </div>
         </div>

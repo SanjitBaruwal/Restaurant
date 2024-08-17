@@ -10,11 +10,26 @@
   box-sizing: border-box;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
 #menu {
   scroll-margin-top: 120px; /* Adjust this value to match the height of your fixed navbar */
+}
+
+#example-section {
+  scroll-margin-top: 180px;
+}
+#home,
+#profile,
+#messages,
+#settings,
+#location {
+  scroll-margin-top: 120px;
 }
 
 body {
@@ -188,4 +203,98 @@ body {
   100% {
     transform: translateX(0);
   }
+}
+
+/* Custom CSS for changing checkbox color */
+.custom-style .form-check-input:checked {
+  background-color: #f39c12; /* Custom color (e.g., orange) */
+  border-color: #f39c12;
+}
+
+.custom-style .form-check-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem #fbeed3;
+}
+
+.custom-style .form-check-input:checked::after {
+  background-color: green; /* Checkmark color */
+  border-color: #d8e2ef;
+}
+
+.customStyle {
+  border-color: #9da9bb;
+}
+.custom-card:hover .card-body {
+  bottom: 0;
+}
+
+.ipagination {
+  color: black;
+}
+
+.ipagination:hover {
+  cursor: pointer;
+  color: white;
+  background: #000;
+}
+.active {
+  background: #000 !important;
+  border: none;
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.checklist li::before {
+  content: "✅"; /* Unicode character for a checkmark */
+  position: absolute;
+  left: 0;
+  color: #38a169; /* Tailwind's green-600 color */
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: fit-content;
+}
+
+.select-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust icon width */
+  height: 20px; /* Adjust icon height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-input {
+  width: 100%;
+  padding-left: 40px; /* Adjust padding to make space for icon */
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  background: transparent;
+  background-color: #fff;
+  color: #333;
+}
+
+.select-input:focus {
+  outline: none;
+  border-color: #007bff;
 }

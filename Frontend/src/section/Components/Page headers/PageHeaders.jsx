@@ -1,0 +1,52 @@
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ResuableHeader from "../../../components/ResuableHeader";
+const PageHeaders = () => {
+  const pageTitle = `<div class="card">
+  <div class="card-body">
+    <h3>Page Title</h3>
+    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, incidunt pariatur a, exercitationem dignissimos ea veniam laboriosam minima cum rerum blanditiis quod maxime eligendi dolore est laudantium commodi assumenda cupiditate.</p><a class="btn btn-link btn-sm pl-0 mt-2" href="https://getbootstrap.com/docs/4.3/components/#custom-forms/" target="_blank">Get Started<span class="fas fa-chevron-right ml-1 fs--2"></span></a>
+  </div>
+</div>`;
+  return (
+    <div className="  bg-[#F9FAFD] py-[110px]   w-full  px-10 lg:px-[5%] xl:px-[12.5%] ">
+      <div className="grid grid-cols-5 gap-4">
+        <div className="col-span-5 lg:col-span-4 grid grid-cols-2  gap-4">
+          <div className="col-span-2 ">
+            <ResuableHeader
+              title="Page Header"
+              desc="These modular elements can be readily used and customized in every layout across pages."
+            />
+          </div>
+          <div className="col-span-2   shadow-md h-fit flex flex-col ">
+            <h2
+              className="text-2xl bg-white p-4 text-black"
+              style={{ fontFamily: "Merriweather" }}
+            >
+              Example
+            </h2>
+            <div className=" h-fit flex flex-col gap-2 ">
+              <div className="bg-[#F9FAFD] p-4  flex flex-col gap-2 ">
+                <ResuableHeader
+                  title="Page Title"
+                  desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, incidunt pariatur a, exercitationem dignissimos ea veniam laboriosam minima cum rerum blanditiis quod maxime eligendi dolore est laudantium commodi assumenda cupiditate."
+                  goto="GET STARTED"
+                  link="https://getbootstrap.com/docs/4.3/components/alerts/"
+                  shadow="none"
+                />
+
+                <div className="select-text">
+                  <SyntaxHighlighter language="html" style={dracula}>
+                    {pageTitle}
+                  </SyntaxHighlighter>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PageHeaders;

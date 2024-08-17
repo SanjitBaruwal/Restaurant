@@ -21,7 +21,7 @@ const Footer = () => {
     },
   };
   return (
-    <div className="w-full xs:h-[85vh] md:h-[50vh] z-10 ">
+    <div className="w-full xs:h-[85vh] md:h-[50vh] z-10  ">
       <div className="  bg-[#0B1727] xs:h-[90%] md:h-4/5 w-full  px-10 lg:px-[5%] xl:px-[12.5%] flex xs:items-center md:items-end z-0">
         <div className=" flex justify-start items-start gap-4  flex-1  px-[15px] z-10">
           <motion.div
@@ -53,11 +53,8 @@ const Footer = () => {
                 </button>
               </div>
             </div>
-            <div className="flex xs:flex-1  md:flex-[2] items-start">
+            <div className="flex xs:flex-1  md:flex-[2] items-start h-fit ">
               <div className="flex items-start  gap-4 flex-1 justify-center h-full ">
-                <div className="  h-full flex items-center">
-                  <div className="border border-[#232E3C] h-1/2"></div>
-                </div>
                 <div className="flex flex-col gap-4">
                   <h1 className="text-white text-lg font-bold">ABOUT</h1>
                   <ul>
@@ -77,9 +74,9 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start   gap-4 flex-1 justify-center h-full ">
-                <div className="  h-full flex items-center">
+                {/* <div className="  h-full flex items-center">
                   <div className="border border-[#232E3C] h-1/2"></div>
-                </div>
+                </div> */}
                 <div className="flex flex-col gap-4">
                   <h1 className="text-white text-lg font-bold">RESOURCES</h1>
                   <ul>

@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import ResuableReservationModel from "./ResuableReservationModel";
 
 const MobileNavbar = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const [openSections, setOpenSections] = useState({
     home: false,
     pages: false,
@@ -135,9 +140,14 @@ const MobileNavbar = () => {
         </ul>
       </nav>
       <div className="border-2 border-[#ffc554] w-1/3  flex justify-center items-center rounded-[.375rem] text-[#ffc554]  hover:text-[#4D5969] hover:bg-[#ffc554] cursor-pointer transition duration-300 ease-linear z-20">
-        <button className="outline-none px-[1rem] py-[0.3125rem] font-bold">
+        <button
+          className="outline-none px-[1rem] py-[0.3125rem] font-bold"
+          onClick={handleShow}
+        >
           RESERVATION
         </button>
+
+        <ResuableReservationModel show={show} onHide={handleClose} />
       </div>
     </div>
   );
