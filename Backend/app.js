@@ -29,6 +29,9 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.send("Server is running.");
+});
 app.use("/api/v1/admin", carouselRouter);
 app.use("/api/v1/admin/menu", menuRouter);
 app.use("/api/v1/admin/message", messageRouter);
