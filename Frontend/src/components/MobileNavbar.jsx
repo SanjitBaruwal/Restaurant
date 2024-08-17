@@ -50,10 +50,10 @@ const MobileNavbar = () => {
             onClick={() => toggleSection("pages")}
           >
             <DropdownMenu isOpen={openSections.pages}>
-              <NavLink to="/menu">Menu</NavLink>
-              <NavLink to="/gallery">Gallery</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink to="/pages/menu">Menu</NavLink>
+              <NavLink to="/pages/gallery">Gallery</NavLink>
+              <NavLink to="/pages/about">About</NavLink>
+              <NavLink to="/pages/contact">Contact</NavLink>
             </DropdownMenu>
           </NavItem>
           <NavItem title="Menu" />
@@ -64,39 +64,83 @@ const MobileNavbar = () => {
           >
             <DropdownMenu isOpen={openSections.components}>
               <div className="  max-h-[400px]  overflow-y-scroll  grid grid-cols-2 md:grid-cols-4 grid-rows-auto gap-4">
-                <NavLinkComponent to="/alerts">Alerts</NavLinkComponent>
-                <NavLinkComponent to="/background">Background</NavLinkComponent>
-                <NavLinkComponent to="/badges">Badges</NavLinkComponent>
-                <NavLinkComponent to="/breadcrumb">Breadcrumb</NavLinkComponent>
-                <NavLinkComponent to="/buttons">Buttons</NavLinkComponent>
-                <NavLinkComponent to="/cards">Cards</NavLinkComponent>
-                <NavLinkComponent to="/carousel">Carousel</NavLinkComponent>
-                <NavLinkComponent to="/media-object">
+                <NavLinkComponent to="/components/alert">
+                  Alerts
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/background">
+                  Background
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/badges">
+                  Badges
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/breadcrumb">
+                  Breadcrumb
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/buttons">
+                  Buttons
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/cards">
+                  Cards
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/carousel">
+                  Carousel
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/mediaobject">
                   Media object
                 </NavLinkComponent>
-                <NavLinkComponent to="/navs">Navs</NavLinkComponent>
-                <NavLinkComponent to="/navbar">Navbar</NavLinkComponent>
-                <NavLinkComponent to="/page-header">
+                <NavLinkComponent to="components//navs">Navs</NavLinkComponent>
+                <NavLinkComponent to="/components/navbar">
+                  Navbar
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/pageheader">
                   Page headers
                 </NavLinkComponent>
-                <NavLinkComponent to="/pagination">Pagination</NavLinkComponent>
-                <NavLinkComponent to="/popovers">Popovers</NavLinkComponent>
-                <NavLinkComponent to="/progress">Progress</NavLinkComponent>
-                <NavLinkComponent to="/collapse">Collapse</NavLinkComponent>
-                <NavLinkComponent to="/dropdowns">Dropdowns</NavLinkComponent>
-                <NavLinkComponent to="/fancyscroll">
+                <NavLinkComponent to="/components/pagination">
+                  Pagination
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/popovers">
+                  Popovers
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/progress">
+                  Progress
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/collapse">
+                  Collapse
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/dropdown">
+                  Dropdowns
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/fancyscroll">
                   Fancyscroll
                 </NavLinkComponent>
-                <NavLinkComponent to="/forms">Forms</NavLinkComponent>
-                <NavLinkComponent to="/hoverbox">Hoverbox</NavLinkComponent>
-                <NavLinkComponent to="/list-group">List group</NavLinkComponent>
-                <NavLinkComponent to="/modals">Modals</NavLinkComponent>
-                <NavLinkComponent to="/scrollspy">Scrollspy</NavLinkComponent>
-                <NavLinkComponent to="/spinners">Spinners</NavLinkComponent>
-                <NavLinkComponent to="/tables">Tables</NavLinkComponent>
-                <NavLinkComponent to="/tabs">Tabs</NavLinkComponent>
-                <NavLinkComponent to="/tooltips">Tooltips</NavLinkComponent>
-                <NavLinkComponent to="/toasts">Toasts</NavLinkComponent>
+                <NavLinkComponent to="/components/forms">
+                  Forms
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/hoverbox">
+                  Hoverbox
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/listgroup">
+                  List group
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/modals">
+                  Modals
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/scrollspy">
+                  Scrollspy
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/spinners">
+                  Spinners
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/tables">
+                  Tables
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/tabs">Tabs</NavLinkComponent>
+                <NavLinkComponent to="/components/tooltips">
+                  Tooltips
+                </NavLinkComponent>
+                <NavLinkComponent to="/components/toasts">
+                  Toasts
+                </NavLinkComponent>
               </div>
             </DropdownMenu>
           </NavItem>
@@ -107,21 +151,21 @@ const MobileNavbar = () => {
           >
             <DropdownMenu isOpen={openSections.utilities}>
               <div className="max-h-[400px]  overflow-y-scroll">
-                <NavLink to="/borders">Borders</NavLink>
-                <NavLink to="/clearfix">Clearfix</NavLink>
-                <NavLink to="/close icon">Close icon</NavLink>
-                <NavLink to="/colors">Colors</NavLink>
-                <NavLink to="/display">Display</NavLink>
-                <NavLink to="/embed">Embed</NavLink>
-                <NavLink to="/flex">Flex</NavLink>
-                <NavLink to="/figures">Figures</NavLink>
-                <NavLink to="/grid">Grid</NavLink>
-                <NavLink to="/sizing">Sizing</NavLink>
-                <NavLink to="stretched-link">Stretched link</NavLink>
-                <NavLink to="spacing">Spacing</NavLink>
-                <NavLink to="/typography">Typography</NavLink>
-                <NavLink to="/vertical-align">Vertical align</NavLink>
-                <NavLink to="/visibility">Visibility</NavLink>
+                <NavLink to="/utilities/borders">Borders</NavLink>
+                <NavLink to="/utilities/clearfix">Clearfix</NavLink>
+                <NavLink to="/utilities/closeIcon">Close icon</NavLink>
+                <NavLink to="/utilities/colors">Colors</NavLink>
+                <NavLink to="/utilities/display">Display</NavLink>
+                <NavLink to="/utilities/embed">Embed</NavLink>
+                <NavLink to="/utilities/flex">Flex</NavLink>
+                <NavLink to="/utilities/figures">Figures</NavLink>
+                <NavLink to="/utilities/grid">Grid</NavLink>
+                <NavLink to="/utilities/sizing">Sizing</NavLink>
+                <NavLink to="/utilities/stretchedlink">Stretched link</NavLink>
+                <NavLink to="/utilities/spacing">Spacing</NavLink>
+                <NavLink to="/utilities/typography">Typography</NavLink>
+                <NavLink to="/utilities/verticalalign">Vertical align</NavLink>
+                <NavLink to="/utilities/visibility">Visibility</NavLink>
               </div>
             </DropdownMenu>
           </NavItem>
@@ -131,10 +175,10 @@ const MobileNavbar = () => {
             onClick={() => toggleSection("plugins")}
           >
             <DropdownMenu isOpen={openSections.plugins}>
-              <NavLink to="/fancytab">Fancytab</NavLink>
-              <NavLink to="/flexslider">Flexslider</NavLink>
-              <NavLink to="/owl-carousel">Owl Carousel</NavLink>
-              <NavLink to="/fancybox">Fancybox</NavLink>
+              <NavLink to="/plugins/fancytab">Fancytab</NavLink>
+              <NavLink to="/plugins/flexslider">Flexslider</NavLink>
+              <NavLink to="/plugins/owlcarousel">Owl Carousel</NavLink>
+              <NavLink to="/plugins/fancybox">Fancybox</NavLink>
             </DropdownMenu>
           </NavItem>
         </ul>
