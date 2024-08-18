@@ -3,8 +3,14 @@ import { HiMail } from "react-icons/hi";
 import { ImMap } from "react-icons/im";
 import { MdCall } from "react-icons/md";
 import Map from "./Map";
+import ResuableReservationModel from "../ResuableReservationModel";
+import { useState } from "react";
 
 const Contact = ({ animation }) => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleClose = () => setShowForm(false);
+  const handleShow = () => setShowForm(true);
   const greenVarient = {
     hidden: {
       opacity: 0,
@@ -129,12 +135,17 @@ const Contact = ({ animation }) => {
                   <h3>9:00 am to 9:00 pm </h3>
                 </div>
               </div>
-              <div className="bg-[#FF806E] hover:bg-[#FF5E48] w-fit  justify-center items-center rounded-[.375rem] text-[#fff] text-lg cursor-pointer transition duration-300 ease-linear z-20 ">
+              <div
+                className="bg-[#FF806E] hover:bg-[#FF5E48] w-fit  justify-center items-center rounded-[.375rem] text-[#fff] text-lg cursor-pointer transition duration-300 ease-linear z-20 "
+                onClick={handleShow}
+              >
                 <button className="outline-none xs:px-[1rem] sm:px-[2rem] md:px-[3rem] py-[0.3125rem] font-bold ">
                   MAKE A RESERVATION
                 </button>
               </div>
             </div>
+            <ResuableReservationModel show={showForm} onHide={handleClose} />
+
             <motion.div
               initial="hidden"
               whileInView="visible"

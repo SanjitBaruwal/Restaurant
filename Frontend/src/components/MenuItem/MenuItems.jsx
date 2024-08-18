@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdFreeBreakfast } from "react-icons/md";
 import { PiForkKnifeBold } from "react-icons/pi";
 import { GiHotMeal } from "react-icons/gi";
 import { FaBirthdayCake, FaGlassCheers } from "react-icons/fa";
-import items from "./menuItem";
 import ResuableOrderModel from "../ResuableOrderModel";
+import axios from "axios";
 
 const MenuItems = () => {
   const [activeTab, setActiveTab] = useState("Breakfast");
+  const [menuItems, setMenuItems] = useState([]);
   const [showOrderModel, setShowOrderModel] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null); // State to store selected item
 
@@ -85,6 +86,28 @@ const MenuItems = () => {
     },
   };
 
+  const fetchMenuItem = async () => {
+    await axios
+      .get(
+        `${import.meta.env.VITE_SERVER_URL}/api/v1/admin/menu/getallMenuItems`,
+        { withCredentials: true }
+      )
+      .then((res) => {
+        setMenuItems(res.data.items);
+      })
+      .catch((err) => {
+        setMenuItems([]);
+        console.log("Some error occurred while fetching data:", err);
+      });
+  };
+
+  useEffect(() => {
+    fetchMenuItem();
+  }, []);
+
+  // Filter items based on the active tab
+  const filteredItems = menuItems.filter((item) => item.category === activeTab);
+
   return (
     <div className="xs:px-10 lg:px-[5%] xl:px-[12.5%] mt-[80px] space-y-7 bg-white">
       <div className="border-b-[4px] border-[#F9FAFD] flex justify-center items-end xs:gap-4 md:gap-0">
@@ -117,9 +140,9 @@ const MenuItems = () => {
             variants={container_variants}
             className=" py-28 grid xs:grid-cols-1 lg:grid-cols-3 justify-items-start align-items-start"
           >
-            {items[activeTab].map((item, index) => (
+            {filteredItems.map((item, index) => (
               <motion.div
-                key={item.id}
+                key={item._id}
                 className={`w-full ${
                   index % 3 !== 2 ? "lg:border-r-2 border-gray-200" : ""
                 }`}

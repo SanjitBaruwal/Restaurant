@@ -1,7 +1,11 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import data from "./carouseldata";
+// import data from "./carouseldata";
+import { useEffect, useState } from "react";
+import axios from "axios";
 const CarouselImg = () => {
+  const [carouselData, setCarouselData] = useState([]);
+
   const responsive = {
     extraLarge: {
       breakpoint: { max: 3000, min: 1280 },
@@ -23,6 +27,23 @@ const CarouselImg = () => {
     },
   };
 
+  const fetchCarouselItem = async () => {
+    await axios
+      .get(`${import.meta.env.VITE_SERVER_URL}/api/v1/admin/getallCarousels`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setCarouselData(res.data.data);
+      })
+      .catch((err) => {
+        setCarouselData([]);
+        console.log("something error occured: ", err);
+      });
+  };
+  useEffect(() => {
+    fetchCarouselItem();
+  }, []);
+
   return (
     <div className="px-[12.5%] mt-[80px] menu" id="carousel">
       <Carousel
@@ -31,12 +52,12 @@ const CarouselImg = () => {
         infinite={true}
         autoPlay={true}
       >
-        {data.map((item) => (
+        {carouselData.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className="h-[350px] relative flex justify-center items-end bg-no-repeat bg-cover bg-center group rounded-[10px] cursor-pointer mx-3"
             style={{
-              backgroundImage: `url(${item.background})`,
+              backgroundImage: `url(${item.background.url})`,
             }}
           >
             <div className="h-1/3 w-[88%] flex flex-col justify-start items-start space-y-2 py-3 opacity-5 group-hover:opacity-100 transition-opacity duration-300 relative z-10">

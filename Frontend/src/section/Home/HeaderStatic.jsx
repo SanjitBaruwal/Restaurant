@@ -37,9 +37,11 @@ const HeaderStatic = () => {
           </div>
           <div className="  pt-6 flex md:flex-row  justify-start items-center gap-5 xs:flex-col sm:flex-row z-0">
             <div className=" border-2 border-[#ffc554] flex justify-center items-center rounded-[.375rem] bg-[#ffc554] text-[#4D5969] hover:bg-[#FFB82E] cursor-pointer transition duration-300 ease-linear z-20">
-              <button className="outline-none px-[3rem] py-[0.3125rem] font-bold flex space-x-2 ">
-                <div>ORDER</div> <div className="hidden lg:flex">ONLINE</div>
-              </button>
+              <a href="#menu">
+                <button className="outline-none px-[3rem] py-[0.3125rem] font-bold flex space-x-2 ">
+                  <div>ORDER</div> <div className="hidden lg:flex">ONLINE</div>
+                </button>
+              </a>
             </div>
             <div className="  border-2 border-[#ffc554] flex justify-center items-center rounded-[.375rem] text-[#ffc554] hover:text-[#4D5969] hover:bg-[#FFB82E] cursor-pointer transition duration-300 ease-linear z-20">
               <a href="#location">

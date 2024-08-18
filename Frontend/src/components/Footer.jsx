@@ -48,9 +48,11 @@ const Footer = () => {
                 Our Food?
               </div>
               <div className=" w-fit  flex justify-center items-center rounded-[.375rem] bg-[#ffc554] text-[#4D5969] hover:bg-[#FFB82E] cursor-pointer transition duration-300 ease-linear z-20">
-                <button className=" w-fit outline-none xs:px-[2rem]  lg:px-[3rem] py-[0.3125rem] font-bold flex space-x-2 ">
-                  ORDER ONLINE
-                </button>
+                <a href="#menu">
+                  <button className=" w-fit outline-none xs:px-[2rem]  lg:px-[3rem] py-[0.3125rem] font-bold flex space-x-2 ">
+                    ORDER ONLINE
+                  </button>
+                </a>
               </div>
             </div>
             <div className="flex xs:flex-1  md:flex-[2] items-start h-fit ">
